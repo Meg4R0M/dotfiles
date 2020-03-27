@@ -17,7 +17,6 @@
 #####################################################################################################################
 #####################################################################################################################
 
-
 # KEY DEFINITIONS TO REMEMBER
 
 # $Mod = WINDOWS key or Super key or Mod4
@@ -29,7 +28,6 @@
 # Pause = PAUSE key
 # Print = PRINT key
 # Tab = TAB key
-
 
 #####################################################################################################################
 #################                          Define the $mod variable/key                             #################
@@ -49,7 +47,6 @@ set $mod Mod4
 #####################################################################################################################
 #################                          Single and Dual screen                                   #################
 #####################################################################################################################
-
 
 # setting variables for later use
 # use xrandr and/or arandr to know the names of your monitors
@@ -120,8 +117,6 @@ bindsym $mod+Shift+) move container to workspace $ws11; workspace $ws11
 bindsym $mod+Shift+equal move container to workspace $ws12; workspace $ws12
 bindsym $mod+Shift+comma move container to workspace $ws13; workspace $ws13
 
-
-
 #####################################################################################################################
 #################                          3 menu's in ArchMerge                                     #################
 #####################################################################################################################
@@ -141,16 +136,12 @@ bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto San
 # start dmenu
 bindsym $mod+F12 exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
-
-
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
 #####################################################################################################################
 
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 
 #Press $mod (super) and X to exit - check toolbar for next choices
 bindsym $mod+Pause mode "$mode_system"
@@ -167,21 +158,15 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-
-
 #####################################################################################################################
 #################                          reload changed configuration                             #################
 #####################################################################################################################
-
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
-
-
 
 #####################################################################################################################
 #################                          Stopping an application                                  #################
@@ -190,13 +175,9 @@ bindsym $mod+Shift+c reload
 # kill focused window
 bindsym $mod+Shift+q kill
 
-
-
-
 #####################################################################################################################
 #################                          Moving around in i3                                      #################
 #####################################################################################################################
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -228,13 +209,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-
-
-
 #####################################################################################################################
 #################                          moving around workspaces                                 #################
 #####################################################################################################################
-
 
 # next/previous workspace
 
@@ -248,10 +225,6 @@ bindsym Mod1+Ctrl+Left workspace prev
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-
-
-
 
 #####################################################################################################################
 #################                          Tiling parameters                                        #################
@@ -276,7 +249,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -286,14 +258,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-
-
-
-
 #####################################################################################################################
 #################                          resize                                                   #################
 #####################################################################################################################
-
 
 # resize window (you can also use the mouse for that)
 
@@ -322,7 +289,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
 #####################################################################################################################
 #################                          choose the font                                          #################
 #####################################################################################################################
@@ -331,7 +297,6 @@ mode "resize" {
 # is used in the bar {} block below.
 # choose your font
 font pango:Zekton 8
-
 
 #####################################################################################################################
 #################                          assign applications to workspaces                       #################
@@ -345,7 +310,8 @@ assign [class="jetbrains-phpstorm|jetbrains-idea|Xed|Brackets|Atom|code-oss"]   
 # "2: Terminal"
 assign [class="Terminator|Alacritty"]                                               → $ws2
 # "3: Browser"
-assign [class="firefoxdeveloperedition|Firefox|Vivaldi-stable|Opera|google-chrome|Google-chrome"]           → $ws3
+assign [class="firefoxdeveloperedition|Firefox|Vivaldi-stable|Opera"]               → $ws3
+assign [class="google-chrome|Google-chrome"]                                        → $ws3
 # "4: File Manager"
 assign [class="Nemo|Thunar|Caja|nautilus|Nautilus|Pamac-manager"]                   → $ws4
 # "5: Multimedia"
@@ -367,9 +333,6 @@ assign [class="Vmplayer|VirtualBox"]                                            
 assign [class="Geary|Evolution"]                                                    → $ws12
 #fix for spotify not moving to workspace $ws5
 for_window [class="Spotify"] move to workspace $ws5
-
-
-
 
 #####################################################################################################################
 #################                          execute applications at boot time                        #################
@@ -490,8 +453,6 @@ bindsym control+mod1+u exec --no-startup-id pavucontrol
 #ArchMerge does not seem to work
 bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
 
-
-
 #workspace related
 
 #workspace 1 related
@@ -539,27 +500,18 @@ bindsym control+mod1+e exec --no-startup-id evolution;workspace 9;focus
 bindsym $mod+F10 exec --no-startup-id spotify;workspace 10;focus
 bindsym control+mod1+s exec --no-startup-id spotify;workspace 10;focus
 
-
-
-
 #####################################################################################################################
 #################                          screenshots                                              #################
 #####################################################################################################################
-
 
 bindsym Print exec --no-startup-id scrot 'ArchMerge-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 bindsym Control+Print exec --no-startup-id xfce4-screenshooter
 bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
 #bindsym shift+Print exec --no-startup-id shutter
 
-
-
-
-
 #####################################################################################################################
 #################                          floating or tiled                                        #################
 #####################################################################################################################
-
 
 #floating enabled from some programs - find with xprop
 
@@ -608,30 +560,23 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
 
-
 for_window [instance="gimp"] floating disable
 for_window [instance="script-fu"] border normal
 for_window [instance="variety"] floating disable
-
 
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
 for_window [title="^Terminator Preferences$"] floating enable
 
-
 #for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [window_role="setup"] floating enable
 
-
-
-
 #####################################################################################################################
 #################                          give focus to applications                               #################
 #####################################################################################################################
-
 
 for_window [class="Gnome-terminal"] focus
 for_window [class="Termite"] focus
@@ -640,11 +585,9 @@ for_window [class="Terminator"] focus
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-
 #####################################################################################################################
 #################                          variety for your wallpapers                              #################
 #####################################################################################################################
-
 
 #Variety keybindings mod1 = ALT
 # trash wallpaper
@@ -662,14 +605,9 @@ bindsym mod1+Up exec --no-startup-id variety --pause
 # resume wallpaper
 bindsym mod1+Down exec --no-startup-id variety --resume
 
-
-
-
-
 #####################################################################################################################
 #################                          audio settings                                           #################
 #####################################################################################################################
-
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
@@ -684,7 +622,6 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 #bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 #bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
-
 #####################################################################################################################
 #################                          xbacklight                                               #################
 #####################################################################################################################
@@ -692,21 +629,16 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
-
-
 #####################################################################################################################
 #################                          bar toggle                                               #################
 #####################################################################################################################
 
-
 # bar toggle, hide or show
 bindsym $mod+b bar mode toggle
-
 
 #####################################################################################################################
 #################                          border control                                           #################
 #####################################################################################################################
-
 
 # Border control
 hide_edge_borders both
@@ -729,7 +661,6 @@ new_float normal 0
 
 #Rounded borders
 border_radius 10
-
 
 #####################################################################################################################
 #################                          Popups  control                                          #################
@@ -762,7 +693,6 @@ popup_during_fullscreen smart
 # delete or uncomment the following lines if you do not have it or do not
 # want it
 
-
 for_window [class="^.*"] border pixel 1
 for_window [class="^.*"] title_format " %title"
 gaps inner 5
@@ -770,15 +700,9 @@ gaps outer 5
 #smart_gaps on
 #smart_borders on
 
-
-
-
-
 #####################################################################################################################
 #################                          i3 gaps change                                           #################
 #####################################################################################################################
-
-
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
