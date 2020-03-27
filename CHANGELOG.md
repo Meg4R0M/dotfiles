@@ -10,6 +10,7 @@
 * **rofi:** add rofi dotfiles ([1693522](https://github.com/psykoterro/dotfiles/commit/16935220711b99d114126319f3d746d4e0e43e10))
 * **screenshot:** add screenshot for i3 config with polybar ([77e5cf9](https://github.com/psykoterro/dotfiles/commit/77e5cf99c9a80d72bdaa919f99c59619a26344c7))
 * **termite:** add termite dotfiles ([7439bb8](https://github.com/psykoterro/dotfiles/commit/7439bb8dc69262846740dd0571f2556f7c7544a0))
+* **themes:** add fonts, themes and icons ([c1c2156](https://github.com/psykoterro/dotfiles/commit/c1c21560d1b92ed9051af855ec69bbf72f30244e))
 * **zsh:** add zsh dotfiles ([0ff2efd](https://github.com/psykoterro/dotfiles/commit/0ff2efd39947343b403194b015cc30291acfc021))
 
 

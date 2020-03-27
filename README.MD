@@ -13,3 +13,4 @@ If you need some information or if you want to add features, please open an issu
  - [Neofetch](https://github.com/dylanaraps/neofetch) with my mount point and custom logo by [Arcolinux](https://arcolinux.com/)
  - [Termite](https://github.com/thestinger/termite) config based on [Arcolinux](https://arcolinux.com/) + [Termite-style](https://github.com/adi1090x/termite-style) script
  - [Zsh](https://github.com/zsh-users/zsh) with [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [spaceshift-prompt](https://github.com/denysdovhan/spaceship-prompt)
+ - [Vim](https://github.com/vim/vim) with [Ultimate Vim](https://github.com/amix/vimrc)
