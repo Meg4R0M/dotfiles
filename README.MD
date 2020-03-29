@@ -14,3 +14,11 @@ If you need some information or if you want to add features, please open an issu
  - [Termite](https://github.com/thestinger/termite) config based on [Arcolinux](https://arcolinux.com/) + [Termite-style](https://github.com/adi1090x/termite-style) script
  - [Zsh](https://github.com/zsh-users/zsh) with [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [spaceshift-prompt](https://github.com/denysdovhan/spaceship-prompt)
  - [Vim](https://github.com/vim/vim) with [Ultimate Vim](https://github.com/amix/vimrc)
+
+ ![current sway config](https://raw.githubusercontent.com/psykoterro/dotfiles/master/screenshots/sway_config.png)
+
+## Programs
+
+- [Sway](https://github.com/swaywm/sway)
+- [Waybar](https://github.com/Alexays/Waybar)
+- [Mako](https://github.com/emersion/mako)

@@ -1,0 +1,399 @@
+// vim:ft=json
+
+[{
+    "layer": "top",
+    "position": "top",
+    "height": 50,
+    "gaps": 10,
+    "output": "DP-4",
+    "modules-left": [
+        "custom/rofi_menu",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "sway/workspaces",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/spotify",
+        "custom/spotify_previous",
+        "custom/spotify_playpause",
+        "custom/spotify_next",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/info_trash",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/right-end-top"
+    ],
+    "modules-center": [
+        "custom/left-end-top",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "temperature",
+        "custom/temperature_cpu",
+        "custom/temperature_gpu",
+        "custom/temperature_gpu2",
+        "custom/temperature_ssd",
+        "custom/temperature_nvme",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/right-end-top"
+    ],
+    "modules-right": [
+        "custom/left-end-top",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/updates",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/kernel",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/uptime",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "idle_inhibitor",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "tray"
+    ],
+
+    "custom/rofi_menu": {
+        "format": "",
+        "on-click": "~/.config/rofi/scripts/apps.sh &",
+        "tooltip": false
+    },
+    "sway/workspaces": {
+        "format": "{icon}", 
+        "disable-scroll-wraparound": true,
+        "enable-bar-scroll": true,
+        "smooth-scrolling-threshold": 30,
+        "all-outputs": true,
+        "format-icons": {
+            "1: C0D3": "",
+            "2: T3rM": "",
+            "3: Br0W53R": "",
+            "4: F1L3": "",
+            "5: M3D14": "",
+            "6: Gr4Ph1K": "",
+            "7: J4V4": "",
+            "8: CuRS3S": "",
+            "9: V3RS10N": "",
+            "10: C0MMuN1C": "",
+            "11: 0Th3Rz": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "custom/spotify": {
+        "interval": 2,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh --title",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/spotify_previous": {
+        "format": "",
+        "on-click": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
+        "exec-if": "pgrep spotify",
+        "tooltip": false
+    },
+    "custom/spotify_next": {
+        "format": "",
+        "on-click": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next",
+        "exec-if": "pgrep spotify",
+        "tooltip": false
+    },
+    "custom/spotify_playpause": {
+        "format": "",
+        "on-click": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
+        "exec-if": "pgrep spotify",
+        "tooltip": false
+    },    
+    "custom/info_trash": {
+        "interval": 10,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/info-trash.sh",
+        "on-click": "~/.config/waybar/modules/info-trash.sh --clean"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/devices/platform/asus-wmi-sensors/hwmon/hwmon1/temp3_input",
+        "critical-threshold": 80,
+        "format": "{icon} CM {temperatureC}°C",
+        "format-critical": " {icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "custom/temperature_cpu": {
+        "interval": 10,
+        "format": " CPU {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/temperatures.sh --cpu"
+    },
+    "custom/temperature_gpu": {
+        "interval": 10,
+        "format": " GPU {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/temperatures.sh --gpu"
+    },
+    "custom/temperature_gpu2": {
+        "interval": 10,
+        "format": " GPU2 {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/temperatures.sh --gpu2"
+    },
+    "custom/temperature_ssd": {
+        "interval": 10,
+        "format": " SSD {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/temperatures.sh --ssd"
+    },
+    "custom/temperature_nvme": {
+        "interval": 10,
+        "format": " NVMe {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/temperatures.sh --nvme"
+    },
+
+    "custom/updates": {
+        "interval": 3600,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/updates.sh",
+        "exec-if": "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+    },
+    "custom/kernel": {
+        "interval": 3600,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/kernel.sh"
+    },
+    "custom/uptime": {
+        "interval": 60,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/uptime.sh"
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}  ",
+        "format-critical": " {capacity}% {icon}  ",
+        "format-warning": " {capacity}% {icon}  ",
+        "format-fd": "{capacity}% {icon}  ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 5,
+        "icon-size": 18
+    },
+
+    "custom/left-end-top": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-end-top": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left-end-bottom": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-end-bottom": {
+        "format": "",
+        "tooltip": false
+    }
+
+},
+
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 50,
+    "gaps": 10,
+    "output": "DP-4",
+    "modules-left": [
+        "sway/window",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "cpu",
+        "memory",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/storage_root",
+        "custom/storage_home",
+        "custom/storage_stockage",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/right-end-bottom"
+    ],
+    "modules-center": [
+        "custom/left-end-bottom",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "network",
+        "custom/extip",
+        "custom/right-end-bottom",
+        "custom/left-end-top",
+        "custom/right-end-bottom"
+    ],
+    "modules-right": [
+        "custom/left-end-bottom",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "clock",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/weather",
+        "custom/airquality",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "pulseaudio",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/redshift",
+        "custom/right-end-top",
+        "custom/left-end-bottom",
+        "custom/rofi_exit"
+    ],
+
+    "sway/window": {
+        "format": " {}",
+        "max-length": 40,
+        "tooltip": false
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": " {used}",
+        "max-length": 6,
+        "tooltip": true
+    },
+    "custom/storage_root": {
+        "interval": 2,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/storage.sh /"
+    },
+    "custom/storage_home": {
+        "interval": 2,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/storage.sh /home"
+    },
+    "custom/storage_stockage": {
+        "interval": 2,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/storage.sh /Stockage"
+    },
+
+    "network": {
+        "interval": 1,
+        "format": "{icon} {ipaddr}  {bandwidthDownOctets}  {bandwidthUpOctets}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": ["", "" ,""],
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "on-click": "termite -e nmtui"
+    },
+    "custom/extip": {
+        "interval": 60,
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/pub-ip.sh"
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": " {:%d %B %Y %H:%M:%S}",
+        "tooltip": false
+    },
+    "custom/weather": {
+        "format": " {}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 220,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather"
+    },
+    "custom/airquality": {
+        "interval": 60,
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/info-airqualityindex.sh"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-bluetooth": " {volume}% {icon}",
+        "format-muted": " MM {icon}",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": [" ", " ", " ", " "],
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", "", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": true
+    },
+    "custom/redshift": {
+        "interval": 60,
+        "format": " {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/redshift.sh"
+    },
+    "custom/rofi_exit": {
+        "format": "",
+        "on-click": "~/.config/rofi/scripts/powermenu.sh &",
+        "tooltip": false
+    },
+
+    "custom/left-end-top": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-end-top": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left-end-bottom": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-end-bottom": {
+        "format": "",
+        "tooltip": false
+    }
+
+}]

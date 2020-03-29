@@ -1,0 +1,52 @@
+#!/bin/python
+# -*- coding: utf-8 -*-
+
+# Procedure
+# Surf to https://openweathermap.org/city
+# Fill in your CITY
+# e.g. Antwerp Belgium
+# Check url
+# https://openweathermap.org/city/2803138
+# you will the city code at the end
+# create an account on this website
+# create an api key (free)
+
+import requests
+
+CITY = "3032833"
+API_KEY = "<YOUR TOKEN>"
+UNITS = "Metric"
+UNIT_KEY = "C"
+
+REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&appid={}&units={}".format(CITY, API_KEY, UNITS))
+
+
+try:
+    # HTTP CODE = OK
+    if REQ.status_code == 200:
+        CURRENT = REQ.json()["weather"][0]["description"].capitalize()
+        TEMP = int(float(REQ.json()["main"]["temp"]))
+
+        translate = {
+            "Clear sky": "Ciel clair",
+            "Few clouds": "Quelques nuages",
+            "Mist": "Brouillard",
+            "Light rain": "Pluie légère",
+            "Moderate rain": "Pluie modérée",
+            "Haze": "Brume",
+            "Broken clouds": "Nuages brisés",
+            "Snow": "Neige",
+            "Light snow": "Neige légère",
+            "Light rain and snow": "Pluie légère et neige",
+            "Scattered clouds": "Nuages éparses",
+            "Light itensity drizzle": "Bruine d'intensité légère",
+            "Overcast clouds": "Nuages couverts"
+        }
+
+        P_CURRENT = translate.get(CURRENT, CURRENT)
+        print("{\"text\":\""+P_CURRENT.strip(),", "+str(TEMP).strip()+"°"+UNIT_KEY.strip()+"\", \"class\": \"\"}")
+        #print("{}, {} °{}".format(translate.get(CURRENT, CURRENT), TEMP, UNIT_KEY))
+    else:
+        print("Error: BAD HTTP STATUS CODE " + str(REQ.status_code))
+except (ValueError, IOError):
+    print("Error: Unable print the data")

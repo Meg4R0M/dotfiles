@@ -1,0 +1,417 @@
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   Zekton;
+    font-size:     22px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+    margin: 2px 0 2px 0;
+}
+
+window {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(1, 1, 1, 0.40);
+}
+
+#window {
+    margin-left: 4px;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 0 0 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+window#waybar.solo {
+    background: rgba(1, 1, 1, 0.40);
+}
+
+#workspaces {
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#workspaces button {
+    transition: none;
+    color:      rgba(217, 216, 216, 0.4);
+    background: transparent;
+}
+
+#workspaces button.visible {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#workspaces button.focused {
+    border-top: 1px solid #9aedfe;
+    color: #9aedfe;
+}
+
+#workspaces button:hover {
+    border-top: 3px solid #ff79c6;
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #ff79c6;
+}
+
+#workspaces button.urgent {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-spotify, #custom-weather {
+    margin:     0px 6px 0px 10px;
+    min-width:  25px;
+}
+
+#idle_inhibitor {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#idle_inhibitor.deactivated {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#network {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-extip {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#clock {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#temperature {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-temperature_cpu {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-temperature_gpu {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-temperature_gpu2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-temperature_ssd {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-temperature_nvme {
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#battery.warning {
+    color:       rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#custom-spotify {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-spotify_previous {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-spotify_playpause {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-spotify_next {
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-storage_root {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-storage_home {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-storage_stockage {
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-info_trash {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-weather {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-airquality {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-updates {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-uptime {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-kernel {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#pulseaudio {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#cpu {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#battery {
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#memory {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#tray {
+    margin-left: 0;
+    margin-right: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0 10px 10px 0;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-rofi_exit {
+    margin-left: 0;
+    margin-right: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0 10px 10px 0;
+    transition: none;
+    color: #00acc1;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-rofi_menu {
+    margin-left: 4px;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 0 0 10px;
+    transition: none;
+    color: #00acc1;
+    background: rgba(0, 60, 60, 1);
+}
+
+#custom-redshift {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    background: rgba(0, 60, 60, 1);
+    font-size: 18px;
+}
+
+#custom-left-end-top {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    transition: none;
+    background: rgba(1, 1, 1, 0.40);
+    color: rgba(0, 60, 60, 1);
+    font-size: 28px;
+}
+
+#custom-right-end-top {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    transition: none;
+    background: rgba(1, 1, 1, 0.40);
+    color: rgba(0, 60, 60, 1);
+    font-size: 28px;
+}
+
+#custom-left-end-bottom {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    transition: none;
+    background: rgba(1, 1, 1, 0.40);
+    color: rgba(0, 60, 60, 1);
+    font-size: 28px;
+}
+
+#custom-right-end-bottom {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    transition: none;
+    background: rgba(1, 1, 1, 0.40);
+    color: rgba(0, 60, 60, 1);
+    font-size: 28px;
+}
