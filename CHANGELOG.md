@@ -16,3 +16,11 @@
 
 
 
+#  (2020-03-29)
+
+
+### Features
+
+* **mako:** add mako configuration ([e8b80ad](https://github.com/psykoterro/dotfiles/commit/e8b80ad554278e0e1618e307c5b0c899e90556df))
+
+
