@@ -1,0 +1,13 @@
+font=Zekton 11
+background-color=#003C3C
+text-color=#ffffff
+border-color=#00acc1
+border-radius=10
+#margin=25
+
+[hidden]
+format=(and %h more)
+text-color=#777777
+
+[urgency=high]
+background-color=#ff0000
